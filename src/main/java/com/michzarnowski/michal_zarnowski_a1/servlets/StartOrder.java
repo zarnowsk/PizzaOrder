@@ -3,6 +3,7 @@ package com.michzarnowski.michal_zarnowski_a1.servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -30,7 +31,7 @@ public class StartOrder extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
 
         //Collect user data from request
-        String name = request.getParameter("name");
+        String name = getName(request, response);
         String tel = request.getParameter("tel");
         
         //Set name and phone number as session attributes for access in JSP
@@ -81,6 +82,33 @@ public class StartOrder extends HttpServlet {
             out.println("</body>");
             out.println("</html>");
         }
+    }
+    
+    /**
+     * Method validates the name entered by the user in form inside index.html.
+     * If name exists and is not empty, it will be returned to calling statement, 
+     * otherwise method will dispatch index.html
+     * @param request Http Servlet Request object
+     * @param response Http Servlet Response object
+     * @return name entered by the user
+     * @throws ServletException
+     * @throws IOException 
+     */
+    private String getName(HttpServletRequest request,
+            HttpServletResponse response) throws ServletException, IOException{
+
+        //Get the name entered by the user in the form and clear of empty spaces
+        String name = request.getParameter("name").trim();
+        
+        //If name exists and is not empty return it, otherwise dispatch index.html
+        if(name != null && name.length() > 0) {
+            return name;
+        } else {
+            RequestDispatcher rd = getServletContext().getRequestDispatcher("/index.html");
+            rd.forward(request, response);
+        }
+        
+        return "";
     }
 
 }
