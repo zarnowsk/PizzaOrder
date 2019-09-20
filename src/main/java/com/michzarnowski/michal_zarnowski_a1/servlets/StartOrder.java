@@ -32,7 +32,7 @@ public class StartOrder extends HttpServlet {
 
         //Collect user data from request
         String name = getName(request, response);
-        String tel = request.getParameter("tel");
+        String tel = getNumber(request, response);
         
         //Set name and phone number as session attributes for access in JSP
         HttpSession session = request.getSession();
@@ -100,11 +100,50 @@ public class StartOrder extends HttpServlet {
         //Get the name entered by the user in the form and clear of empty spaces
         String name = request.getParameter("name").trim();
         
-        //If name exists and is not empty return it, otherwise dispatch index.html
+        //If name exists and is not empty return it, otherwise dispatch loginError.html
         if(name != null && name.length() > 0) {
             return name;
         } else {
-            RequestDispatcher rd = getServletContext().getRequestDispatcher("/index.html");
+            RequestDispatcher rd = getServletContext().getRequestDispatcher("/loginError.html");
+            rd.forward(request, response);
+        }
+        
+        return "";
+    }
+    
+    /**
+     * Method validates the phone number entered by the user inside index.html
+     * using regular expression pattern. If entered number conforms to allowed
+     * formats, the number is returned by the function, otherwise, user is 
+     * redirected to an HTML page containing another form to fill out.
+     * @param request Http Servlet Request object
+     * @param response Http Servlet Response object
+     * @return Telephone number entered by the user
+     * @throws ServletException
+     * @throws IOException 
+     */
+    private String getNumber(HttpServletRequest request,
+            HttpServletResponse response) throws ServletException, IOException{
+
+        /*Regex pattern to set allowed phone number formats including:
+        nnnnnnnnnn
+        nnn-nnn-nnnn
+        nnn nnn nnnn
+        (nnn)nnn-nnnn
+        (nnn)nnnnnnn
+        */
+        String pattern = 
+                "\\d{10}|(?:\\d{3}-){2}\\d{4}|(?:\\d{3} ){2}\\d{4}|\\(\\d{3}\\)\\d{3}-?\\d{4}";
+        
+        //Get the number entered by the user in the form
+        String number = request.getParameter("tel");
+        
+        //If user's entry matches the pattern, return it to calling statement
+        //otherwise dispatch loginError.html
+        if(number.matches(pattern)) {
+            return number;
+        } else {
+            RequestDispatcher rd = getServletContext().getRequestDispatcher("/loginError.html");
             rd.forward(request, response);
         }
         
