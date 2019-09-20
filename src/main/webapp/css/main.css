@@ -1,0 +1,59 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 19-Sep-2019, 7:07:10 PM
+    Author     : Michal Zarnowski
+*/
+
+body {
+  background-color: #fec69c;
+  text-align: center;
+}
+
+h1, h2 {
+    font-family: 'Lobster', cursive;
+    color: #ba5614;
+    text-align: center;
+}
+
+h3, p, ul {
+    color: #ba5614;
+    text-align: center;
+}
+
+form {
+    display: inline-block;
+    text-align: left;
+    color: #ba5614;
+}
+
+fieldset {
+    display: inline-block;
+}
+
+legend {
+    color: #d88027;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.buttonHolder{ text-align: center; }
+
+input[type=submit] {
+  background-color: #d88027;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+#clock {
+    color: #d88027;
+    font-size: 40px;
+    font-weight: bold;
+}
