@@ -1,0 +1,27 @@
+<!-- This page serves the purpose of acquiring user details in case they were 
+not received on the server.-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Pizza Ordering Application</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href='https://fonts.googleapis.com/css?family=Lobster&display=swap' rel='stylesheet'>
+        <link rel='stylesheet' type='text/css' href='css/main.css' />
+    </head>
+    <body>
+        <h1>Welcome to my Pizza Ordering App</h1>
+        <h2>We're sorry, something went wrong!</h2>
+        <h2>Please enter your details again.</h2>
+        <br>
+        <form action="StartOrder.do" method="GET">
+            Name  <input type="text" name="name" required>
+            <br><br>
+            Phone <input type="text" name="tel" required>
+            <br><br>
+            <div class='buttonHolder'>
+                <input type="submit" value="Start Order!">
+            </div>
+        </form>
+    </body>
+</html>
