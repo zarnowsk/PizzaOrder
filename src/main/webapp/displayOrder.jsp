@@ -14,7 +14,8 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Order Details</title>
-
+        <link href='https://fonts.googleapis.com/css?family=Lobster&display=swap' rel='stylesheet'>
+        <link rel='stylesheet' type='text/css' href='css/main.css' />
     </head>
     <body onload="displayCountDown()">
 
