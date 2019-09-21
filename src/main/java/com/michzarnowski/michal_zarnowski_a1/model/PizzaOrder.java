@@ -2,7 +2,11 @@
 
 package com.michzarnowski.michal_zarnowski_a1.model;
 
-
+/**
+ * PizzaOrder model represents an order of a pizza including its toppings, size
+ * and delivery method.
+ * @author Michal Zarnowski
+ */
 public class PizzaOrder {
     
     private String[] toppings;
@@ -12,6 +16,7 @@ public class PizzaOrder {
     public PizzaOrder() {
     }
     
+    //Getters & setters
     public String[] getToppings() {
         return toppings;
     }
@@ -36,6 +41,11 @@ public class PizzaOrder {
         this.delivery = delivery;
     }
     
+    /**
+     * Method evaluates pizza price based on delivery method, size and amount
+     * of toppings
+     * @return total pizza price
+     */
     public double getPrice() {
         double price = 0.0;
         
@@ -60,6 +70,7 @@ public class PizzaOrder {
         return price;
     }
     
+    //Used for testing purposes
     @Override
     public String toString(){
         String format = "Your %s pizza for %s will have:\n";
