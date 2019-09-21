@@ -11,12 +11,12 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 /**
- *
+ * Start order servlet handles placing user's name and telephone number inside
+ * the session. Servlet also builds HTML form for pizza delivery.
  * @author Michal Zarnowski
  */
 public class StartOrder extends HttpServlet {
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
      *
