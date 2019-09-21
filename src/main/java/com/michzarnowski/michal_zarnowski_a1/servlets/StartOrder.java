@@ -45,10 +45,10 @@ public class StartOrder extends HttpServlet {
         
         //Prepare order form HTML
         String orderForm = "<form action='PlaceOrder.do' method='POST'><fieldset><legend>New Pizza Order</legend>";
-        String delMethod = "Pick up or delivery <select name='delMethod'>\n" + 
+        String delMethod = "Pick up or delivery <select id='delMethod' name='delMethod'>\n" + 
                 "<option value='pickUp'>Pick-up</option>\n" + 
                 "<option value='delivery'>Delivery</option>\n" + 
-                "</select><br><br>";
+                "</select><br><br><div id=formDiv>";
         String size = 
                 "<input type='radio' name='size' value='small' checked> Small ($5)\n" + 
                 "<input type='radio' name='size' value='medium'> Medium ($7)\n" +
@@ -59,7 +59,7 @@ public class StartOrder extends HttpServlet {
                 "<input type='checkbox' name='topping' value='spinach'> Baby Spinach<br>\n" +
                 "<input type='checkbox' name='topping' value='pepper'> Pepper<br><br>\n";
         String submit = "<div class='buttonHolder'><input type='submit' value='Place My Order'></div>";
-        String formEnd = "</fieldset></form>";
+        String formEnd = "</div></fieldset></form>";
 
         //Build HTML with print writer (egh...)
         try (PrintWriter out = response.getWriter()) {
@@ -69,6 +69,7 @@ public class StartOrder extends HttpServlet {
             out.println("<title>Place your order</title>"); 
             out.println("<link rel='stylesheet' type='text/css' href='css/main.css' />");
             out.println("<link href='https://fonts.googleapis.com/css?family=Lobster&display=swap' rel='stylesheet'>" );
+            out.println("<script src='deliveryForm.js'></script>");
             out.println("</head>");
             out.println("<body>");
             out.println(String.format(nameFormat, name));
