@@ -17,9 +17,19 @@ h1, h2 {
     text-align: center;
 }
 
-h3, p, ul {
+h3, p {
     color: #ba5614;
     text-align: center;
+}
+
+#list {
+    display: inline-block;
+    margin: 0 auto;
+}
+
+ul {
+    text-align: left;
+    color: #ba5614;
 }
 
 form {
@@ -59,6 +69,28 @@ input[type=submit] {
 }
 
 input[type=text] {
+    margin-left: 10px;
   display: inline-block;
   float: right;
+}
+
+iframe {
+    overflow: hidden;
+    position: absolute;
+}
+
+#gifOne {
+    top: 15%;
+    right: 0%;
+}
+
+#gifTwo {
+    top: 15%;
+    left: 10%;
+}
+
+@media only screen and (max-width: 1000px) {
+    iframe {
+        display: none;
+    }
 }
