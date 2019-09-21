@@ -40,6 +40,7 @@ function displayDeliveryForm() {
     var streetAddress = document.createElement("input"); 
     streetAddress.setAttribute('type', "text");
     streetAddress.setAttribute('name', "streetAddress");
+    streetAddress.setAttribute('required', "required");
     
     var streetAddressLabel = document.createElement("Label");
     streetAddressLabel.htmlFor = "streetAddress";
@@ -54,6 +55,7 @@ function displayDeliveryForm() {
     var city = document.createElement("input");
     city.setAttribute('type', "text");
     city.setAttribute('name', "city");
+    city.setAttribute('required', "required");
     
     var cityLabel = document.createElement("Label");
     cityLabel.htmlFor = "city";
@@ -68,6 +70,7 @@ function displayDeliveryForm() {
     var postal = document.createElement("input"); 
     postal.setAttribute('type', "text");
     postal.setAttribute('name', "postal");
+    postal.setAttribute('required', "required");
     
     var postalLabel = document.createElement("Label");
     postalLabel.htmlFor = "postal";
