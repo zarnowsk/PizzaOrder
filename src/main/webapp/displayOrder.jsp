@@ -40,7 +40,7 @@
                 //Specify gif path and print ready time and address based on
                 //delivery method
                 if (pizzaOrder.isDelivery()) {
-                gifSrc = "media/deliveryGif.webp";    
+                gifSrc = "media/deliveryGif.gif";    
                 
                 out.print("delivered within 40 minutes to:<br>\n");
                 String[] deliveryDetails = (String[])request.getAttribute("deliveryDetails");
@@ -48,7 +48,7 @@
                     out.println(detail + "<br>");
                 }
             } else {
-                gifSrc = "media/pickUpGif.webp";
+                gifSrc = "media/pickUpGif.gif";
                 out.print("ready for pickup in 20 minutes at:<br>\n");
                 out.println("99 Pizza Street<br>");
                 out.println("Pizzaville<br>");
