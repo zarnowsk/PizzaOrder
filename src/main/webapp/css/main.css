@@ -1,9 +1,8 @@
 /*
 CSS for the Pizza Order Application
-*/
-/* 
-    Created on : 19-Sep-2019, 7:07:10 PM
-    Author     : Michal Zarnowski
+
+Created on : 19-Sep-2019, 7:07:10 PM
+Author     : Michal Zarnowski
 */
 
 body {
@@ -22,9 +21,10 @@ h3, p {
     text-align: center;
 }
 
+/* Div element for list items */
 #list {
-    display: inline-block;
-    margin: 0 auto;
+    display: inline-block; /* Adjsut width to fit content */
+    margin: 0 auto; /* Center element */
 }
 
 ul {
@@ -52,6 +52,7 @@ legend {
     text-align: center;
 }
 
+/* Submit button */
 input[type=submit] {
   background-color: #d88027;
   border: none;
@@ -70,12 +71,12 @@ input[type=submit] {
 
 input[type=text] {
     margin-left: 10px;
-  display: inline-block;
-  float: right;
+    display: inline-block;
+    float: right;
 }
 
 iframe {
-    overflow: hidden;
+    overflow: hidden; /* Remove scrollbars */
     position: absolute;
 }
 
@@ -89,6 +90,7 @@ iframe {
     left: 10%;
 }
 
+/* Remove GIFs if screen is smaller than 1000px to prevent text overlap */
 @media only screen and (max-width: 1000px) {
     iframe {
         display: none;
