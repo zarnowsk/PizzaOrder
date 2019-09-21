@@ -40,7 +40,9 @@ legend {
     font-weight: bold;
 }
 
-.buttonHolder{ text-align: center; }
+.buttonHolder { 
+    text-align: center;
+}
 
 input[type=submit] {
   background-color: #d88027;
@@ -56,4 +58,9 @@ input[type=submit] {
     color: #d88027;
     font-size: 40px;
     font-weight: bold;
+}
+
+input[type=text] {
+  display: inline-block;
+  float: right;
 }
