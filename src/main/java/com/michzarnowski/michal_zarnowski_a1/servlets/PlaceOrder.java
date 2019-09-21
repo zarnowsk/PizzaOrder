@@ -53,24 +53,13 @@ public class PlaceOrder extends HttpServlet {
         //Set request attribute with the pizza order
         request.setAttribute("pizzaOrder", order);
         
-        //Forward request to JSP page
+        //Forward request to appriopriate JSP page
         String jsp = "/displayOrder.jsp";
+        
         RequestDispatcher dispatcher = 
                 getServletContext().getRequestDispatcher(jsp);
         dispatcher.forward(request, response);
         
-//        response.setContentType("text/html;charset=UTF-8");
-//        try (PrintWriter out = response.getWriter()) {
-//            out.println("<!DOCTYPE html>");
-//            out.println("<html>");
-//            out.println("<head>");
-//            out.println("<title>Servlet PlaceOrder</title>");            
-//            out.println("</head>");
-//            out.println("<body>");
-//            out.println("<h1>" + order.toString() + "</h1>");
-//            out.println("</body>");
-//            out.println("</html>");
-//        }
     }
 
 }
